@@ -1,0 +1,7 @@
+var isSquare = function(n){
+  var sq = Math.sqrt(n);
+  if (sq-parseInt(sq) != 0)
+    return false
+  else
+    return true
+}
