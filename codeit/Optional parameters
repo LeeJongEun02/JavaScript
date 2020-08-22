@@ -1,0 +1,8 @@
+// 옵셔널 파라미터. 값을 받지 않으면 기본값을 지정할 수 있다.
+function orderSetMenu(sandwich, drink = '스프라이트'){
+  console.log(`주문하신 ${sandwich}, ${drink} 세트메뉴 나왔습니다!`);
+}
+
+// 테스트 코드
+orderSetMenu('코드웨잇 클럽');
+orderSetMenu('터키베이컨 아보카도', '코카콜라');
