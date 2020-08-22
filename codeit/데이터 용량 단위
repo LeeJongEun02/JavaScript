@@ -1,0 +1,14 @@
+function teraToGiga(tera){
+  return 1024 * tera
+}
+
+function teraToMega(tera){
+  return teraToGiga(tera) * 1024
+}
+
+// TB -> GB 테스트
+console.log('2TB는');
+console.log(teraToGiga(2)+'GB 입니다.');
+// TB -> MB 테스트
+console.log('2TB는');
+console.log(teraToMega(2)+'MB 입니다.');
