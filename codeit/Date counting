@@ -1,0 +1,19 @@
+let today = new Date(2112, 8, 24);
+let Start = new Date(2109, 7, 1);
+
+function workDayCalc(startDate) {
+  // 결과값이 밀리초
+	let timeDiff = today.getTime() - Start.getTime();
+  // 1000밀리초 = 1초
+  let secondDiff = timeDiff / 1000;
+  // 60초 = 1분
+  let minuteDiff = secondDiff / 60;
+  // 60분 = 1시간
+  let hourDiff = minuteDiff / 60;
+  // 24시간 = 하루, 입사 첫날부터 1일이니까 +1해준다.
+  let dayDiff = hourDiff / 24 + 1;
+
+  console.log(`오늘은 입사한 지 ${dayDiff}일째 되는 날입니다.`);
+}
+
+workDayCalc(Start);
