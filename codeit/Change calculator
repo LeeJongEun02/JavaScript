@@ -1,0 +1,16 @@
+function calculateChange(payment, cost) {
+  let change = payment - cost; // 거스름돈 총액
+  
+  const money_list = [50000, 10000, 5000, 1000]; // 지폐 단위
+  
+  for (money of money_list){
+    let count = Math.floor(change / money); // 몇장이나 거슬러줄지
+    change %= money;
+    console.log(`${money}원 지폐: ${count}장`);
+  }
+}
+
+// 테스트 코드
+calculateChange(100000, 33000)
+console.log('');
+calculateChange(500000, 378000)
