@@ -3,7 +3,7 @@ let Start = new Date(2109, 7, 1);
 
 function workDayCalc(startDate) {
   // 결과값이 밀리초
-	let timeDiff = today.getTime() - Start.getTime();
+  let timeDiff = today.getTime() - Start.getTime();
   // 1000밀리초 = 1초
   let secondDiff = timeDiff / 1000;
   // 60초 = 1분
