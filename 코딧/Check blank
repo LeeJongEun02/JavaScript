@@ -1,0 +1,18 @@
+// 이메일이나 패스워드의 내용이 변경될 때마다 putButton이벤트 실행.
+$('#email-input').on('input', putButton);
+$('#password-input').on('input', putButton);
+
+function putButton(){
+  // 이메일과 패스워드의 값을 변수에 넣어준다.
+  var email = $('#email-input').val();
+  var pass = $('#password-input').val();
+    
+  // 만약에 이메일이나 패스워드의 값이 비어있다면
+  if (email == '' || pass == ''){
+    $('#submit-btn').css('background-color', '#9B9B9B');
+  }
+    
+  else {
+    $('#submit-btn').css('background-color', '#1BBC9B');
+  }
+}
