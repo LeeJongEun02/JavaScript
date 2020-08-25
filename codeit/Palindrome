@@ -1,0 +1,19 @@
+function isPalindrome(word) {
+  mid = Math.floor(word.length/2);
+  let j = word.length-1;
+  for (let i = 0; i < mid; i++){
+      if (word[i] != word[j])
+        return false
+      else
+        j--;
+    }
+  return true
+}
+
+// 테스트 코드
+console.log(isPalindrome("racecar"));
+console.log(isPalindrome("stars"));
+console.log(isPalindrome("기러기"));
+console.log(isPalindrome("123321"));
+console.log(isPalindrome("hello"));
+console.log(isPalindrome("kayak"));
