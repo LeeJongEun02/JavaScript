@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <style>
+      body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .main {
+      width: 350px;
+      margin: 40px;
+      padding: 30px 0;
+      background-color: #FCFCFC;
+      box-shadow: -5px -5px 20px #DFDFDF,  5px 5px 20px #BABECC;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .title {
+      margin: 15px auto;
+      font-size: 30px;
+      font-weight: 600;
+      color: #9600FF;
+    }
+
+    #to-do-list {
+      width: 280px;
+      margin: 0 auto 15px;
+      padding: 0;
+      list-style: none;
+    }
+
+    #to-do-list li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 90%;
+      height: 40px;
+      margin: 8px auto 15px;
+      border-bottom: 1px solid #9600FF;
+      cursor: pointer;
+    }
+
+    .done {
+      opacity: 0.5;
+      text-decoration: line-through;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+    <h2 class="title">오늘 할 일</h2>
+    <ul id="to-do-list">
+      <li class="item">자바스크립트 공부하기</li>
+      <li class="item">스터디 플래너 작성하기</li>
+      <li class="item">일기쓰기</li>
+    </ul>
+  </div>
+    <script>
+    // 부모태그
+      const toDoList = document.querySelector('#to-do-list');
+
+
+      function updateToDo(event) {
+        if(event.target.classList.contains('item')){
+          event.target.classList.toggle('done');
+        }
+      }
+
+      toDoList.addEventListener('click', updateToDo);
+
+      // 테스트 코드
+      const newToDo = document.createElement('li');
+      newToDo.textContent = '가계부 정리하기';
+      newToDo.classList.add('item');
+      toDoList.append(newToDo);
+
+      // 버블링 안 통하게 하기
+      toDoList.children[2].addEventListener('click', function(e) {e.stopPropagation()});
+    </script>
+  </body>
+</html>
